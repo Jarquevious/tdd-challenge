@@ -14,13 +14,13 @@ const area = (w, h) => {
 
 const perimeter = (w, h) => {
   // should return the perimeter 
-  return (w * h)/2
+  return 2*w + 2*h
 }
 
 const circleArea = r => {
   // should return the area of the circle
-  PI = 3.142
-  return PI * (r * r)
+  
+  return 3.142 * r **2
 }
 
 
@@ -43,18 +43,28 @@ const createItem = (name, price) => {
 
 const getShoppingCart = () => {
   // should return the current state of shopping cart
+  return shoppingCart
 }
 
 const addItemToCart = (item) => {
   // should add item to shopping cart
+  shoppingCart.push(item)
 }
 
 const getNumItemsInCart = () => {
   // should return the total quantity of items in cart
+  return shoppingCart.length
 }
 
 const removeItemFromCart = (item) => {
   // should remove item from shopping cart
+  shoppingCart.forEach(element => {
+    for( var i = 0; i < shoppingCart.length; i++){ 
+      if ( shoppingCart[i] === item) { 
+        shoppingCart.splice(i, 1); 
+      }
+    };
+  })
 }
 
 module.exports = {
